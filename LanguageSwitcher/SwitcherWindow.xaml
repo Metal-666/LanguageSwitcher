@@ -1,0 +1,110 @@
+﻿<Window x:Class="LanguageSwitcher.SwitcherWindow"
+		x:Name="Window"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:LanguageSwitcher"
+		mc:Ignorable="d"
+		Title="LanguageSwitcher"
+		WindowStartupLocation="CenterScreen"
+		WindowStyle="None"
+		AllowsTransparency="True"
+		ResizeMode="NoResize"
+		ShowInTaskbar="False"
+		Visibility="Hidden">
+	<Window.Background>
+		<RadialGradientBrush RadiusX="0.5">
+			<RadialGradientBrush.GradientStops>
+				<GradientStop Color="Black"
+							  Offset="3" />
+				<GradientStop Color="#00000000"
+							  Offset="0.5" />
+			</RadialGradientBrush.GradientStops>
+		</RadialGradientBrush>
+	</Window.Background>
+	<Window.Resources>
+		<Style x:Key="LanguageBlockBorder"
+			   TargetType="Border">
+			<Setter Property="HorizontalAlignment"
+					Value="Center" />
+			<Setter Property="VerticalAlignment"
+					Value="Center" />
+			<Setter Property="Background"
+					Value="#1e1e2e" />
+			<Setter Property="CornerRadius"
+					Value="10" />
+		</Style>
+		<Style x:Key="LanguageBlockBorderSelected"
+			   TargetType="Border"
+			   BasedOn="{StaticResource LanguageBlockBorder}">
+			<Setter Property="Background"
+					Value="#cba6f7" />
+		</Style>
+		<Style x:Key="LanguageBlock"
+			   TargetType="TextBlock">
+			<Setter Property="Foreground"
+					Value="#cdd6f4" />
+			<Setter Property="FontSize"
+					Value="60" />
+			<Setter Property="HorizontalAlignment"
+					Value="Center" />
+			<Setter Property="VerticalAlignment"
+					Value="Center" />
+			<Setter Property="Padding"
+					Value="25, 5" />
+		</Style>
+		<Style x:Key="LanguageBlockSelected"
+			   TargetType="TextBlock"
+			   BasedOn="{StaticResource LanguageBlock}">
+			<Setter Property="Foreground"
+					Value="#313244" />
+		</Style>
+	</Window.Resources>
+	<Grid>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Border Name="LanguageBorderTop"
+					Grid.Row="0"
+					Grid.Column="1"
+					Style="{StaticResource LanguageBlockBorder}">
+				<TextBlock Name="LanguageTop"
+						   Text="English"
+						   Style="{StaticResource LanguageBlock}" />
+			</Border>
+			<Border Name="LanguageBorderLeft"
+					Grid.Row="1"
+					Grid.Column="0"
+					Style="{StaticResource LanguageBlockBorder}">
+				<TextBlock Name="LanguageLeft"
+						   Text="Українська"
+						   Style="{StaticResource LanguageBlock}" />
+			</Border>
+			<Border Name="LanguageBorderRight"
+					Grid.Row="1"
+					Grid.Column="2"
+					Style="{StaticResource LanguageBlockBorder}">
+				<TextBlock Name="LanguageRight"
+						   Text="Русский"
+						   Style="{StaticResource LanguageBlock}" />
+			</Border>
+			<Border Name="LanguageBorderBottom"
+					Grid.Row="2"
+					Grid.Column="1"
+					Style="{StaticResource LanguageBlockBorder}">
+				<TextBlock Name="LanguageBottom"
+						   Text="日本語"
+						   Style="{StaticResource LanguageBlock}" />
+			</Border>
+		</Grid>
+	</Grid>
+</Window>
