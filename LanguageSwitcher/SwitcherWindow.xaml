@@ -7,12 +7,11 @@
 		xmlns:local="clr-namespace:LanguageSwitcher"
 		mc:Ignorable="d"
 		Title="LanguageSwitcher"
-		WindowStartupLocation="CenterScreen"
 		WindowStyle="None"
 		AllowsTransparency="True"
 		ResizeMode="NoResize"
 		ShowInTaskbar="False"
-		Visibility="Hidden">
+		Topmost="True">
 	<Window.Background>
 		<RadialGradientBrush RadiusX="0.5">
 			<RadialGradientBrush.GradientStops>
@@ -24,7 +23,7 @@
 		</RadialGradientBrush>
 	</Window.Background>
 	<Window.Resources>
-		<Style x:Key="LanguageBlockBorder"
+		<Style x:Key="KeyboardLayoutBlockBorder"
 			   TargetType="Border">
 			<Setter Property="HorizontalAlignment"
 					Value="Center" />
@@ -35,13 +34,13 @@
 			<Setter Property="CornerRadius"
 					Value="10" />
 		</Style>
-		<Style x:Key="LanguageBlockBorderSelected"
+		<Style x:Key="KeyboardLayoutBlockBorderSelected"
 			   TargetType="Border"
-			   BasedOn="{StaticResource LanguageBlockBorder}">
+			   BasedOn="{StaticResource KeyboardLayoutBlockBorder}">
 			<Setter Property="Background"
 					Value="#cba6f7" />
 		</Style>
-		<Style x:Key="LanguageBlock"
+		<Style x:Key="KeyboardLayoutBlock"
 			   TargetType="TextBlock">
 			<Setter Property="Foreground"
 					Value="#cdd6f4" />
@@ -54,9 +53,9 @@
 			<Setter Property="Padding"
 					Value="25, 5" />
 		</Style>
-		<Style x:Key="LanguageBlockSelected"
+		<Style x:Key="KeyboardLayoutBlockSelected"
 			   TargetType="TextBlock"
-			   BasedOn="{StaticResource LanguageBlock}">
+			   BasedOn="{StaticResource KeyboardLayoutBlock}">
 			<Setter Property="Foreground"
 					Value="#313244" />
 		</Style>
@@ -73,37 +72,37 @@
 				<RowDefinition Height="*" />
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
-			<Border Name="LanguageBorderTop"
+			<Border Name="KeyboardLayoutBorderTop"
 					Grid.Row="0"
 					Grid.Column="1"
-					Style="{StaticResource LanguageBlockBorder}">
-				<TextBlock Name="LanguageTop"
+					Style="{StaticResource KeyboardLayoutBlockBorder}">
+				<TextBlock Name="KeyboardLayoutTop"
 						   Text="English"
-						   Style="{StaticResource LanguageBlock}" />
+						   Style="{StaticResource KeyboardLayoutBlock}" />
 			</Border>
-			<Border Name="LanguageBorderLeft"
+			<Border Name="KeyboardLayoutBorderLeft"
 					Grid.Row="1"
 					Grid.Column="0"
-					Style="{StaticResource LanguageBlockBorder}">
-				<TextBlock Name="LanguageLeft"
+					Style="{StaticResource KeyboardLayoutBlockBorder}">
+				<TextBlock Name="KeyboardLayoutLeft"
 						   Text="Українська"
-						   Style="{StaticResource LanguageBlock}" />
+						   Style="{StaticResource KeyboardLayoutBlock}" />
 			</Border>
-			<Border Name="LanguageBorderRight"
+			<Border Name="KeyboardLayoutBorderRight"
 					Grid.Row="1"
 					Grid.Column="2"
-					Style="{StaticResource LanguageBlockBorder}">
-				<TextBlock Name="LanguageRight"
+					Style="{StaticResource KeyboardLayoutBlockBorder}">
+				<TextBlock Name="KeyboardLayoutRight"
 						   Text="Русский"
-						   Style="{StaticResource LanguageBlock}" />
+						   Style="{StaticResource KeyboardLayoutBlock}" />
 			</Border>
-			<Border Name="LanguageBorderBottom"
+			<Border Name="KeyboardLayoutBorderBottom"
 					Grid.Row="2"
 					Grid.Column="1"
-					Style="{StaticResource LanguageBlockBorder}">
-				<TextBlock Name="LanguageBottom"
+					Style="{StaticResource KeyboardLayoutBlockBorder}">
+				<TextBlock Name="KeyboardLayoutBottom"
 						   Text="日本語"
-						   Style="{StaticResource LanguageBlock}" />
+						   Style="{StaticResource KeyboardLayoutBlock}" />
 			</Border>
 		</Grid>
 	</Grid>
